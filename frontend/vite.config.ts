@@ -1,0 +1,15 @@
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tsconfigPaths from 'vite-tsconfig-paths'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react(), tsconfigPaths()],
+  server: {
+    // This allows the frontend to proxy requests to the backend
+    // to avoid CORS issues during development.
+    proxy: {
+      '/start_game': 'http://127.0.0.1:8000',
+    },
+  },
+})
