@@ -1,0 +1,78 @@
+# ==========================================
+# Turing Arena - .gitignore
+# ==========================================
+
+# ------------------------------------------
+# Environment Variables & Secrets
+# ------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*secret*
+
+# ------------------------------------------
+# Python / Backend (FastAPI)
+# ------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual Environments
+venv/
+env/
+.venv/
+.env/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ------------------------------------------
+# Node.js / Frontend (React + Vite)
+# ------------------------------------------
+# Dependencies
+frontend/node_modules/
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Production Builds
+frontend/dist/
+frontend/build/
+dist/
+build/
+
+# ------------------------------------------
+# Traditional ML Engines (Stockfish)
+# ------------------------------------------
+# Ignore local binaries and executables so they aren't uploaded to GitHub
+*.exe
+stockfish*
+stockfish-windows-*
+stockfish-ubuntu-*
+stockfish-macos-*
+
+# ------------------------------------------
+# OS & System Files
+# ------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ------------------------------------------
+# IDEs & Editors
+# ------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+.spyderproject/
