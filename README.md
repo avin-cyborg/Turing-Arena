@@ -72,6 +72,7 @@ This is expected — Stockfish at default settings plays at ~3500 ELO, well beyo
 | Illegal move rate per model | 🔧 In progress |
 | Average centipawn loss per move | 🔧 In progress |
 | Move quality vs engine depth | 📋 Planned |
+| fallback | fallback interventions are tracked separately |
 
 
 The next benchmark set will run LLMs against **Stockfish Skill Level 1–5**, where the ELO gap is meaningful enough to reveal real differences between models.
@@ -94,7 +95,7 @@ Turing Arena focuses on **observable behavior**, not abstract claims.
 ### 4. Consistency
 - Does performance degrade over time?
 
-### 5. Explanation vs Action Gap (optional)
+### 5. Explanation vs Action Gap
 - Does the model’s explanation match the actual move quality?
 
 ---
@@ -150,7 +151,6 @@ These are the active workstreams right now, in priority order:
 1. **AI reasoning pipeline** — LLMs generate reasoning with every move; surfacing this to the frontend is the next UI milestone
 2. **Post-game analysis** — Stockfish evaluation of every move (centipawn loss) for benchmark data
 3. **Frontend board + panels** — Chessboard rendering, real-time move display, AI reasoning side panels
-4. **Commentator AI** — Live game commentary via Gemini, with TTS audio output
 
 See [`ROADMAP.md`](./ROADMAP.md) for the full phased plan.
 
