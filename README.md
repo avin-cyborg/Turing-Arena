@@ -1,20 +1,50 @@
 # ♟️ Turing Arena
 
-> *Can AI think strategically — or is it just pattern matching?*
+> *How do language models behave in structured, adversarial decision environments?*
 
-**Turing Arena** is an open platform for benchmarking AI models through competitive gameplay. We pit LLMs (Gemini, GPT-4, Claude) against each other and against classical engines (Stockfish) across strategy games, measuring not just wins and losses, but *how* they think — move quality, illegal move rates, reasoning coherence, and deviation from optimal play.
+**Turing Arena** is a platform for benchmarking AI systems through competitive gameplay. It evaluates Large Language Models (LLMs) alongside classical engines (like Stockfish) to analyze **decision quality, consistency, and failure modes** under controlled conditions.
 
-The goal isn't to crown a winner. It's to build a rigorous, reproducible framework for understanding the gap between AI pattern recognition and genuine strategic reasoning.
+The focus is not on proving whether AI “thinks,” but on **measuring how different AI systems make decisions.**
 
 ---
 
 ## 🎯 What This Is
 
-Most AI benchmarks test knowledge retrieval or instruction following. Turing Arena tests **in-context strategic decision-making** under adversarial pressure — a meaningfully different capability.
+Most AI benchmarks evaluate:
+- Knowledge retrieval
+- Instruction following
+- Text generation
 
-Chess is the starting point. Multi-game support is on the roadmap.
+Turing Arena focuses on something different:
+
+> **Sequential decision-making under constraints**
+
+Chess is the initial test environment because it provides:
+- Clear rules
+- Deterministic outcomes
+- Strong evaluation baselines (Stockfish)
+
+This allows us to compare:
+- **Search-based systems** (Stockfish)
+- **Prediction-based systems** (LLMs)
 
 ---
+
+## ⚠️ Important Framing
+
+This project does **not** attempt to answer:
+- “Can AI think?”
+- “Does AI understand strategy?”
+
+Instead, it studies:
+
+- Move quality vs optimal play  
+- Error patterns (illegal moves, state tracking failures)  
+- Consistency across turns  
+- Differences between heuristic prediction and search-based optimization  
+
+---
+
 
 ## ✅ What's Working Right Now
 
@@ -42,9 +72,30 @@ This is expected — Stockfish at default settings plays at ~3500 ELO, well beyo
 | Illegal move rate per model | 🔧 In progress |
 | Average centipawn loss per move | 🔧 In progress |
 | Move quality vs engine depth | 📋 Planned |
-| Reasoning coherence scoring | 📋 Planned |
+
 
 The next benchmark set will run LLMs against **Stockfish Skill Level 1–5**, where the ELO gap is meaningful enough to reveal real differences between models.
+
+---
+
+## 🧠 What This Project Measures
+
+Turing Arena focuses on **observable behavior**, not abstract claims.
+
+### 1. Decision Quality
+- How close is each move to optimal play?
+
+### 2. Rule Compliance
+- Frequency of illegal or invalid moves
+
+### 3. State Tracking
+- Does the model maintain an accurate internal board representation?
+
+### 4. Consistency
+- Does performance degrade over time?
+
+### 5. Explanation vs Action Gap (optional)
+- Does the model’s explanation match the actual move quality?
 
 ---
 
@@ -133,6 +184,10 @@ cp .env.example .env
 
 # Run the backend
 uvicorn api.main:app --reload
+
+if not working use instead
+uvicorn api.main:app
+
 ```
 
 ### Environment Variables
@@ -199,4 +254,12 @@ MIT
 
 ---
 
-*Built to answer a simple question: when an AI makes a move, does it know why?*
+## 🧭 Project Direction
+
+Turing Arena is built to answer a practical question:
+
+> **How do different AI systems behave when making sequential decisions under constraints?**
+
+Not whether they “think.” Not whether they are “intelligent.”
+
+Just what they actually *do* when forced to act.
