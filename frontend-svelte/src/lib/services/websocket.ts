@@ -8,11 +8,11 @@ class WebSocketService {
   private maxReconnectAttempts = 5;
 
   connect(gameId: string) {
-    const wsUrl = `ws://localhost:8000/ws/${gameId}`;
+    const WS_URL = import.meta.env.VITE_WS_URL || 'ws://localhost:8000';
     
     try {
       wsStore.setStatus('connecting');
-      this.ws = new WebSocket(wsUrl);
+      this.ws = new WebSocket(WS_URL);
 
       this.ws.onopen = () => {
         console.log('✅ WebSocket connected');
