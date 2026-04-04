@@ -156,6 +156,14 @@ See [`ROADMAP.md`](./ROADMAP.md) for the full phased plan.
 
 ---
 
+## 🔗 Deployment Link
+
+ [demo link](https://turing-arena-frontend.onrender.com)
+ 
+note: this is just the basic demo, matches gemini against stockfish in a chess battle
+
+---
+
 ## 🚀 Getting Started
 
 ### Prerequisites
