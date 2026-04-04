@@ -4,7 +4,6 @@
 
 <div class="commentary-panel">
   <div class="header">
-    <span class="icon">🎙️</span>
     <h3>AI Commentary</h3>
   </div>
   
@@ -19,11 +18,12 @@
 
 <style>
   .commentary-panel {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: #1f2937;
+    color: #f9fafb;
     border-radius: 8px;
     padding: 1rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid #374151;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   }
 
   .header {
@@ -33,31 +33,30 @@
     margin-bottom: 1rem;
   }
 
-  .icon {
-    font-size: 1.5rem;
-  }
-
   h3 {
     margin: 0;
     font-size: 1.1rem;
     font-weight: 600;
+    color: #f9fafb;
   }
 
   .commentary-content {
-    background: rgba(255, 255, 255, 0.1);
+    background: #111827;
     border-radius: 6px;
     padding: 1rem;
     min-height: 80px;
+    border: 1px solid #374151;
   }
 
   .commentary-content p {
     margin: 0;
     line-height: 1.6;
     font-size: 0.95rem;
+    color: #e5e7eb;
   }
 
   .empty-state {
-    color: rgba(255, 255, 255, 0.7);
+    color: #6b7280;
     font-style: italic;
   }
 </style>
