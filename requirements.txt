@@ -1,6 +1,7 @@
 # --- Core Framework & Routing ---
 fastapi>=0.100.0
 pydantic>=2.0.0
+tenacity
 
 # --- Server & WebSockets (Implied by FastAPI) ---
 uvicorn[standard]>=0.23.0
@@ -8,6 +9,7 @@ websockets>=11.0.3
 
 # --- Game Engine ---
 chess>=1.10.0
+python-chess
 
 # --- Environment Management ---
 python-dotenv>=1.0.0
