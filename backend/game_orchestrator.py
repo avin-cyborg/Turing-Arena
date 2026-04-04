@@ -44,7 +44,7 @@ stockfish_path = find_stockfish()
 # Initialize all available AI players
 PLAYERS = {
     "Stockfish": UCIAdapter(name="Stockfish", path=stockfish_path),
-    "Gemini": LLMAPIAdapter(name="Gemini", provider_type="gemini", model_name="gemini-pro-latest"),
+    "Gemini": LLMAPIAdapter(name="Gemini", provider_type="gemini", model_name="gemini-2.5-flash"),
     "GPT4": LLMAPIAdapter(name="GPT4", provider_type="gpt4"),
     "Claude": LLMAPIAdapter(name="Claude", provider_type="claude"),
 }
