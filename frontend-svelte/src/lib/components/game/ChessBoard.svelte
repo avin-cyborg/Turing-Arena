@@ -8,10 +8,12 @@
   let boardElement: HTMLDivElement;
   let chessground: any = null;
 
-  // Chess piece symbols (Unicode)
+  // Chess piece symbols — filled glyphs for both colors.
+  // White pieces use the same filled symbols as black, colored via CSS.
+  // The outline white glyphs (♙♖♘♗♕♔) look sketchy; filled + CSS color is solid.
   const pieces: Record<string, string> = {
     'p': '♟', 'r': '♜', 'n': '♞', 'b': '♝', 'q': '♛', 'k': '♚',
-    'P': '♙', 'R': '♖', 'N': '♘', 'B': '♗', 'Q': '♕', 'K': '♔'
+    'P': '♟', 'R': '♜', 'N': '♞', 'B': '♝', 'Q': '♛', 'K': '♚'
   };
 
   // Parse FEN to board representation
@@ -66,7 +68,11 @@
             data-square={squareId}
           >
             {#if piece}
-              <div class="piece">
+              <div
+                class="piece"
+                class:white-piece={piece === piece.toUpperCase()}
+                class:black-piece={piece === piece.toLowerCase()}
+              >
                 {pieces[piece]}
               </div>
             {/if}
@@ -132,6 +138,16 @@
     line-height: 1;
     user-select: none;
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .piece.white-piece {
+    color: #ffffff;
+    -webkit-text-stroke: 1.5px #444444;
+  }
+
+  .piece.black-piece {
+    color: #1a1a1a;
+    -webkit-text-stroke: 0.5px #1a1a1a;
   }
 
   .rank-label,
