@@ -18,14 +18,16 @@ logger = logging.getLogger(__name__)
 current_file_path = os.path.abspath(__file__)
 backend_dir = os.path.dirname(current_file_path)
 project_root = os.path.dirname(backend_dir)
-stockfish_path = os.path.join(project_root, "stockfish.exe")
+import shutil
 
-logger.info(f"Attempting to locate Stockfish at: {stockfish_path}")
+# On the server (Linux/Render), stockfish is installed system-wide.
+# On Windows (local dev), use the .exe in the project root.
+stockfish_path = shutil.which("stockfish") or os.path.join(project_root, "stockfish.exe")
 
-if not os.path.exists(stockfish_path):
-    logger.error(f"Stockfish not found at {stockfish_path}")
+if not stockfish_path or not os.path.exists(stockfish_path):
+    logger.error(f"Stockfish not found. Make sure it is installed.")
 else:
-    logger.info(f"Stockfish found at {stockfish_path}")
+    logger.info(f"Stockfish found at: {stockfish_path}")
 
 # --- PLAYER REGISTRY ---
 # Initialize all available AI players
