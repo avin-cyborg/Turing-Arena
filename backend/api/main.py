@@ -25,7 +25,7 @@ logger.info(f"GEMINI_API_KEY loaded: {bool(os.getenv('GEMINI_API_KEY'))}")
 # ============================================
 
 # The '..' indicates a relative import
-from ..game_orchestrator import start_game_instance, add_websocket_connection, remove_websocket_connection, get_players_list
+from backend.game_orchestrator import start_game_instance, add_websocket_connection, remove_websocket_connection, get_players_list
 
 # --- ASYNCIO POLICY FIX FOR WINDOWS ---
 if sys.platform == "win32":
