@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:8000';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
 export interface StartGameRequest {
   white_player: string;
@@ -14,7 +14,7 @@ export async function startNewGame(
   whitePlayer: string,
   blackPlayer: string
 ): Promise<StartGameResponse> {
-  const response = await fetch(`${API_BASE}/start_game`, {
+  const response = await fetch(`${API_URL}/start_game`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
