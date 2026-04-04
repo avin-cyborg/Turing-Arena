@@ -12,7 +12,7 @@ class WebSocketService {
     
     try {
       wsStore.setStatus('connecting');
-      this.ws = new WebSocket(WS_URL);
+      this.ws = new WebSocket(`${WS_URL}/ws/${gameId}`);
 
       this.ws.onopen = () => {
         console.log('✅ WebSocket connected');
