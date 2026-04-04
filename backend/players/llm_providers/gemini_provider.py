@@ -20,7 +20,7 @@ _ACCEPTABLE_FINISH_REASONS = {"STOP", "MAX_TOKENS"}
 class GeminiProvider(BaseLLMProvider):
     """Google Gemini AI provider — uses google-genai SDK (google.generativeai is deprecated)"""
 
-    def __init__(self, api_key: str = None, model_name: str = "gemini-2.0-flash"):
+    def __init__(self, api_key: str = None, model_name: str = "gemini-2.5-flash"):
         api_key = api_key or os.getenv('GEMINI_API_KEY')
         if not api_key:
             raise ValueError("GEMINI_API_KEY not found in environment")
