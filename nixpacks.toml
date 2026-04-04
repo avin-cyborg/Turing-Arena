@@ -1,2 +1,5 @@
 [phases.setup]
 nixPkgs = ["stockfish"]
+
+[phases.install]
+cmds = ["pip install -r backend/requirements.txt"]
