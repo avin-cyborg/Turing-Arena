@@ -64,13 +64,13 @@
 </script>
 
 <svelte:head>
-  <title>AI Chess Championship</title>
+  <title>Turing Arena</title>
 </svelte:head>
 
 <main class="app-container">
   <!-- Header -->
   <header class="app-header">
-    <h1>🏆 AI Chess Championship</h1>
+    <h1>Turing Arena</h1>
     <p class="subtitle">Watch AI models battle in real-time chess matches</p>
   </header>
 
@@ -88,7 +88,7 @@
     <aside class="sidebar sidebar-left">
       {#if game.status === 'idle'}
         <div class="setup-section">
-          <h2>🎮 Setup Match</h2>
+          <h2>Setup Match</h2>
           <PlayerSelector 
             bind:selectedPlayer={whitePlayer}
             {availablePlayers}
@@ -152,7 +152,7 @@
     margin: 0;
     padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #111827;
     min-height: 100vh;
   }
 
@@ -164,7 +164,7 @@
 
   .app-header {
     text-align: center;
-    color: white;
+    color: #f9fafb;
     margin-bottom: 2rem;
   }
 
@@ -172,13 +172,13 @@
     margin: 0;
     font-size: 2.5rem;
     font-weight: 700;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: -0.5px;
   }
 
   .subtitle {
     margin: 0.5rem 0 0 0;
     font-size: 1.1rem;
-    opacity: 0.9;
+    color: #9ca3af;
   }
 
   .game-layout {
@@ -195,16 +195,18 @@
   }
 
   .setup-section {
-    background: white;
+    background: #1f2937;
     padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid #374151;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   }
 
   .setup-section h2 {
     margin: 0 0 1.5rem 0;
     font-size: 1.3rem;
-    color: #333;
+    color: #f9fafb;
+    font-weight: 600;
   }
 
   .board-section {
@@ -215,10 +217,9 @@
 
   .app-footer {
     text-align: center;
-    color: white;
+    color: #6b7280;
     margin-top: 2rem;
     padding: 1rem;
-    opacity: 0.8;
     font-size: 0.9rem;
   }
 
