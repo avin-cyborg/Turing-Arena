@@ -19,15 +19,26 @@ current_file_path = os.path.abspath(__file__)
 backend_dir = os.path.dirname(current_file_path)
 project_root = os.path.dirname(backend_dir)
 import shutil
+import os
 
-# On the server (Linux/Render), stockfish is installed system-wide.
-# On Windows (local dev), use the .exe in the project root.
-stockfish_path = shutil.which("stockfish") or os.path.join(project_root, "stockfish.exe")
+def find_stockfish() -> str:
+    # 1. Check PATH (works if nixpacks installs it)
+    found = shutil.which("stockfish")
+    if found:
+        logger.info(f"Stockfish found in PATH: {found}")
+        return found
+    
+    # 2. apt-get on Debian/Ubuntu installs to /usr/games/ which is NOT in PATH
+    if os.path.exists("/usr/games/stockfish"):
+        logger.info("Stockfish found at /usr/games/stockfish")
+        return "/usr/games/stockfish"
+    
+    # 3. Local Windows development fallback
+    local_path = os.path.join(project_root, "stockfish.exe")
+    logger.error(f"Stockfish not found in PATH or /usr/games/. Falling back to: {local_path}")
+    return local_path
 
-if not stockfish_path or not os.path.exists(stockfish_path):
-    logger.error(f"Stockfish not found. Make sure it is installed.")
-else:
-    logger.info(f"Stockfish found at: {stockfish_path}")
+stockfish_path = find_stockfish()
 
 # --- PLAYER REGISTRY ---
 # Initialize all available AI players
