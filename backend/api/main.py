@@ -43,6 +43,7 @@ app.add_middleware(
         "http://localhost:5173",
         "http://127.0.0.1:5173",
         "http://localhost:3000",
+        os.getenv("FRONTEND_URL", ""),  # Set this in Render environment variables
     ],
     allow_credentials=True,
     allow_methods=["*"],
