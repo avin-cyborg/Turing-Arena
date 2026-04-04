@@ -8,9 +8,6 @@
 <div class="player-selector">
   <label for="player-{color}">
     {label}
-    <span class="color-badge" class:white={color === 'white'} class:black={color === 'black'}>
-      {color === 'white' ? '⚪' : '⚫'}
-    </span>
   </label>
   <select id="player-{color}" bind:value={selectedPlayer}>
     {#each availablePlayers as player}
@@ -31,31 +28,28 @@
     align-items: center;
     gap: 0.5rem;
     font-weight: 600;
-    color: #333;
+    color: #f9fafb;
     font-size: 0.9rem;
-  }
-
-  .color-badge {
-    font-size: 1.2rem;
   }
 
   select {
     padding: 0.75rem;
-    border: 2px solid #ddd;
+    border: 1px solid #374151;
     border-radius: 6px;
     font-size: 1rem;
-    background: white;
+    background: #111827;
+    color: #f9fafb;
     cursor: pointer;
     transition: border-color 0.2s;
   }
 
   select:hover {
-    border-color: #999;
+    border-color: #6b7280;
   }
 
   select:focus {
     outline: none;
-    border-color: #4CAF50;
-    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+    border-color: #e2a64a;
+    box-shadow: 0 0 0 3px rgba(226, 166, 74, 0.15);
   }
 </style>
