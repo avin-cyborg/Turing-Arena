@@ -168,10 +168,10 @@ note: this is just the basic demo, matches gemini against stockfish in a chess b
 
 ### Prerequisites
 
-- Python 3.10+
-- [Stockfish](https://stockfishchess.org/download/) binary in the project root
+- [python](https://www.python.org/downloads/) make sure to choose "add to path" checkbox while installing.
+- [Stockfish](https://stockfishchess.org/download/) binary in the project root i.e, place the stockfish.exe file in the project root folder and if your downloaded stockfish    folder contains "stockfish-windows-x86-64-avx512icl.exe" or something like that, then rename it to stockfish.exe and then place in the project root folder. 
 - API keys for whichever LLM providers you want to use
-- [node](https://nodejs.org/en/download) choose LTS versions like v22.22.2 (LTS)
+- [node](https://nodejs.org/en/download) choose LTS versions like v22.22.2 (LTS). make sure to choose "add to path" checkbox while installing.
 
 ### Backend Setup
 
@@ -200,7 +200,7 @@ uvicorn api.main:app
 ```
 do not close this terminal unless you want to exit. open a new terminal for running frontend.
 
-open new terminal 
+#### open new terminal 
 ### Frontend Setup
 
 ```bash
