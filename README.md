@@ -171,12 +171,13 @@ note: this is just the basic demo, matches gemini against stockfish in a chess b
 - Python 3.10+
 - [Stockfish](https://stockfishchess.org/download/) binary in the project root
 - API keys for whichever LLM providers you want to use
+- [node](https://nodejs.org/en/download) choose LTS versions like v22.22.2 (LTS)
 
 ### Backend Setup
 
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/turing-arena.git
+git clone https://github.com/avin-cyborg/turing-arena.git
 cd turing-arena
 
 # Create virtual environment
@@ -187,7 +188,7 @@ source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
 # Set up environment variables
-cp .env.example .env
+change the name of ".env.example" to ".env" and 
 # Fill in your API keys in .env
 
 # Run the backend
@@ -197,15 +198,9 @@ if not working use instead
 uvicorn api.main:app
 
 ```
+do not close this terminal unless you want to exit. open a new terminal for running frontend.
 
-### Environment Variables
-
-```env
-GEMINI_API_KEY=your_key_here
-OPENAI_API_KEY=your_key_here
-ANTHROPIC_API_KEY=your_key_here
-```
-
+open new terminal 
 ### Frontend Setup
 
 ```bash
