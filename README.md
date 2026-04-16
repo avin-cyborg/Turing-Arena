@@ -188,14 +188,12 @@ source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
 # Set up environment variables
+cd backend
 change the name of ".env.example" to ".env" and 
 # Fill in your API keys in .env
 
 # Run the backend
-uvicorn api.main:app --reload
-
-if not working use instead
-uvicorn api.main:app
+uvicorn backend.api.main:app
 
 ```
 do not close this terminal unless you want to exit. open a new terminal for running frontend.
@@ -204,7 +202,7 @@ do not close this terminal unless you want to exit. open a new terminal for runn
 ### Frontend Setup
 
 ```bash
-cd frontend
+cd frontend-svelte
 npm install
 npm run dev
 ```
