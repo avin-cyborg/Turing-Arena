@@ -188,9 +188,8 @@ source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
 # Set up environment variables
-cd backend
-change the name of ".env.example" to ".env" and 
-# Fill in your API keys in .env
+change the name of ".env.example" to ".env" (.\backend\.env.example to .\backend\.env)
+then Fill in your API keys in .env
 
 # Run the backend
 uvicorn backend.api.main:app
